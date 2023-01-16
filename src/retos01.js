@@ -27,4 +27,23 @@ let onlyString = (array) => {
   });
   return onlyString;
 };
-module.exports = { maxNumber, sumaPares, onlyString };
+
+let startsWithA = (array) => {
+  let startsWithA = [];
+  for (const items of array) {
+    if (items[0] == "a"){
+    startsWithA.push(items)
+  }
+  }
+  return startsWithA;
+}
+
+
+
+
+
+
+
+
+
+module.exports = { maxNumber, sumaPares, onlyString, startsWithA };
