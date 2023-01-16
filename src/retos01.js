@@ -14,8 +14,17 @@ let sumaPares = (array) => {
     if (array[i] % 2 == 0) {
       sum += array[i];
     }
-    
   }
   return sum;
 };
-module.exports = { maxNumber, sumaPares };
+
+let onlyString = (array) => {
+  let onlyString = [];
+  array.forEach((item) => {
+    if (typeof item === 'string') {
+      onlyString.push(item);
+    }
+  });
+  return onlyString;
+};
+module.exports = { maxNumber, sumaPares, onlyString };
