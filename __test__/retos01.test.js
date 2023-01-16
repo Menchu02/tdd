@@ -1,4 +1,10 @@
-const { maxNumber, sumaPares, onlyString, startsWithA } = require('../src/retos01');
+const {
+  maxNumber,
+  sumaPares,
+  onlyString,
+  startsWithA,
+  wordRepeat,
+} = require('../src/retos01');
 
 test('debe devolver el número mayor de una array de números', () => {
   //GIVEN
@@ -30,9 +36,42 @@ test('debe devolver solo strings en una array de strings y numeros', () => {
 
 test('debe devolver solo strings que empiecen por a desde una array de strings', () => {
   //GIVEN
-  let arrayOfAnimals = ["gato", "perro", "anaconda", "leon", "aguila", "alpaca", "rinoceronte"];
+  let arrayOfAnimals = [
+    'gato',
+    'perro',
+    'anaconda',
+    'leon',
+    'aguila',
+    'alpaca',
+    'rinoceronte',
+  ];
   //WHEN
   let sut = startsWithA(arrayOfAnimals);
   //THEN
   expect(sut).toEqual(['anaconda', 'aguila', 'alpaca']);
+});
+test('debe devolver el número de repeticiones de cada palabra', () => {
+  //GIVEN
+  let listArray = [
+    'gato',
+    'perro',
+    'anaconda',
+    'gato',
+    'leon',
+    'aguila',
+    'alpaca',
+    'perro',
+    'rinoceronte',
+  ];
+  //WHEN
+  let sut = wordRepeat(listArray);
+  //THEN
+  expect(sut).toEqual({
+    gato: 2,
+    perro: 2,
+    anaconda: 1,
+    leon: 1,
+    aguila: 1,
+    rinoceronte: 1,
+  });
 });
