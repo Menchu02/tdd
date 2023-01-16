@@ -1,4 +1,4 @@
-const { maxNumber, sumaPares, onlyString } = require('../src/retos01');
+const { maxNumber, sumaPares, onlyString, startsWithA } = require('../src/retos01');
 
 test('debe devolver el número mayor de una array de números', () => {
   //GIVEN
@@ -26,4 +26,13 @@ test('debe devolver solo strings en una array de strings y numeros', () => {
   let sut = onlyString(mixArray);
   //THEN
   expect(sut).toEqual(['patata', 'hola']);
+});
+
+test('debe devolver solo strings que empiecen por a desde una array de strings', () => {
+  //GIVEN
+  let arrayOfAnimals = ["gato", "perro", "anaconda", "leon", "aguila", "alpaca", "rinoceronte"];
+  //WHEN
+  let sut = startsWithA(arrayOfAnimals);
+  //THEN
+  expect(sut).toEqual(['anaconda', 'aguila', 'alpaca']);
 });
