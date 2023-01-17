@@ -5,7 +5,8 @@ const {
   startsWithA,
   expensiveProduct,
   isNotDone,
-  orderedByPrice
+  orderedByPrice,
+  isAdmin
 } = require('../src/retos01');
 
 test('debe devolver el número mayor de una array de números', () => {
@@ -227,3 +228,92 @@ test('debe devolver una lista de productos ordenados de baratos a caros', () => 
     }
   ]);
 });
+
+test('debe devolver un array que contenga solo tareas no terminadas', () => {
+  //GIVEN
+  let tasksDone = [
+    {
+      title: "Barrer",
+      isDone: true
+    },
+    {
+      title: "Cocinar",
+      isDone: false
+    },
+    {
+      title: "Hacer las compras",
+      isDone: true
+    },
+    {
+      title: "Aspirar",
+      isDone: false
+    },
+    {
+      title: "planchar",
+      isDone: false
+    }
+  ];
+  //WHEN
+  let sut = isNotDone(tasksDone);
+  //THEN
+  expect(sut).toEqual([
+    {
+      title: "Cocinar",
+      isDone: false
+    },
+    {
+      title: "Aspirar",
+      isDone: false
+    },
+    {
+      title: "planchar",
+      isDone: false
+    }
+
+  ]);
+});
+
+test('debe devolver una lista de los admin en orden alfabetico', () => {
+  //GIVEN
+  let userList= [
+    {
+      user: "Carmen",
+      post: "admin"
+    },
+    {
+      user: "Aneeb",
+      post: "user"
+    },
+    {
+      user: "Alex",
+      post: "admin"
+    },
+    {
+      user: "Gustavo",
+      post: "admin"
+    },
+    {
+      user: "Esther",
+      post: "user"
+    },
+    
+  ];
+    //WHEN
+    let sut = isAdmin(userList);
+    //THEN
+    expect(sut).toEqual([
+      {
+        user: "Alex",
+        post: "admin"
+      }, 
+      {
+        user: "Carmen",
+        post: "admin"
+      },
+      {
+        user: "Gustavo",
+        post: "admin"
+      },
+  
+    ]);
+  });
