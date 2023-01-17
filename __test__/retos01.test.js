@@ -3,7 +3,7 @@ const {
   sumaPares,
   onlyString,
   startsWithA,
-  wordRepeat,
+  expensiveProduct,
 } = require('../src/retos01');
 
 test('debe devolver el número mayor de una array de números', () => {
@@ -50,7 +50,7 @@ test('debe devolver solo strings que empiecen por a desde una array de strings',
   //THEN
   expect(sut).toEqual(['anaconda', 'aguila', 'alpaca']);
 });
-test('debe devolver el número de repeticiones de cada palabra', () => {
+/* test('debe devolver el número de repeticiones de cada palabra', () => {
   //GIVEN
   let listArray = [
     'gato',
@@ -74,4 +74,50 @@ test('debe devolver el número de repeticiones de cada palabra', () => {
     aguila: 1,
     rinoceronte: 1,
   });
+});
+ */
+
+
+test('debe devolve array de los objetos que sean más caros de 10', () => {
+  //GIVEN
+  let productList =[
+    {
+      nombre: "tomate",
+      precio: 4
+    },
+    {
+      nombre: "patata",
+      precio: 11
+    },
+    {
+      nombre: "salmon",
+      precio: 20
+    },
+    {
+      nombre: "lechuga",
+      precio: 9
+    },
+    {
+      nombre: "pasta",
+      precio: 15
+    }
+
+  ]
+  //WHEN
+  let sut = expensiveProduct(productList);
+  //THEN
+  expect(sut).toBe([
+    {
+    nombre: "patata",
+    precio: 11
+  },
+  {
+    nombre: "salmon",
+    precio: 20
+  },
+  {
+    nombre: "pasta",
+    precio: 15
+  }
+]);
 });
