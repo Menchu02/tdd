@@ -4,7 +4,8 @@ const {
   onlyString,
   startsWithA,
   expensiveProduct,
-  isNotDone
+  isNotDone,
+  productsPrice
 } = require('../src/retos01');
 
 test('debe devolver el número mayor de una array de números', () => {
@@ -166,5 +167,63 @@ test('debe devolver un array que contenga solo tareas no terminadas', () => {
       isDone: false
     }
 
+  ]);
+});
+test('debe devolver una lista de productos ordenados de baratos a caros', () => {
+  //GIVEN
+  let productsPrice= [
+    {
+      title: "Patata",
+      price: 10
+    },
+    {
+      title: "Salmon",
+      price: 20
+    },
+    {
+      title: "Pasta",
+      price: 5
+    },
+    {
+      title: "Arroz",
+      price: 2
+    },
+    {
+      title: "Cerveza",
+      price: 7
+    },
+    {
+      title: "Vino",
+      price: 30
+    }
+  ];
+  //WHEN
+  let sut = orderedByPrice(productsPrice);
+  //THEN
+  expect(sut).toEqual([
+    {
+      title: "Arroz",
+      price: 2
+    },
+    {
+      title: "Pasta",
+      price: 5
+    },
+    {
+      title: "Cerveza",
+      price: 7
+    },
+    {
+      title: "Patata",
+      price: 10
+    },
+    {
+      title: "Salmon",
+      price: 20
+    },
+    {
+      title: "Vino",
+      price: 30
+    }
   ]);
 });
