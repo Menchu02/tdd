@@ -54,10 +54,16 @@ let orderedByPrice = (array) => {
   return orderedByPrice
 }
 
+let isAdmin = (array) => {
+ let orderedList = array.filter(a=>a.post == "admin");
+ let newOrdered = orderedList.sort((a, b)=> {
+   if (a.user > b.user) return 1
+   if (a.user < b.user) return -1
+   return 0
+})
 
-
-
-
+return newOrdered;
+}
 
 module.exports = {
   maxNumber,
@@ -67,4 +73,5 @@ module.exports = {
   expensiveProduct,
   isNotDone,
   orderedByPrice,
+  isAdmin
 };
