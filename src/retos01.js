@@ -31,24 +31,28 @@ let onlyString = (array) => {
 let startsWithA = (array) => {
   let startsWithA = [];
   for (const items of array) {
-    if (items[0] == "a"){
-    startsWithA.push(items)
-  }
+    if (items[0] == 'a') {
+      startsWithA.push(items);
+    }
   }
   return startsWithA;
-}
+};
 
 let expensiveProduct = (array) => {
-  let expensiveProduct = array.filter((item)=> item.precio > 10)
+  let expensiveProduct = array.filter((item) => item.precio > 10);
   return expensiveProduct;
-}
+};
 
+let isNotDone = (array) => {
+  let isNotDone = array.filter((item) => item.isDone == false);
+  return isNotDone;
+};
 
-
-
-
-
-
-
-
-module.exports = { maxNumber, sumaPares, onlyString, startsWithA, expensiveProduct };
+module.exports = {
+  maxNumber,
+  sumaPares,
+  onlyString,
+  startsWithA,
+  expensiveProduct,
+  isNotDone,
+};
