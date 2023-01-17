@@ -106,7 +106,7 @@ test('debe devolve array de los objetos que sean más caros de 10', () => {
   //WHEN
   let sut = expensiveProduct(productList);
   //THEN
-  expect(sut).toBe([
+  expect(sut).toEqual([
     {
     nombre: "patata",
     precio: 11

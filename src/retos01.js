@@ -38,6 +38,10 @@ let startsWithA = (array) => {
   return startsWithA;
 }
 
+let expensiveProduct = (array) => {
+  let expensiveProduct = array.filter((item)=> item.precio > 10)
+  return expensiveProduct;
+}
 
 
 
@@ -46,4 +50,5 @@ let startsWithA = (array) => {
 
 
 
-module.exports = { maxNumber, sumaPares, onlyString, startsWithA };
+
+module.exports = { maxNumber, sumaPares, onlyString, startsWithA, expensiveProduct };
