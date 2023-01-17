@@ -48,6 +48,17 @@ let isNotDone = (array) => {
   return isNotDone;
 };
 
+
+let orderedByPrice = (array) => {
+  let orderedByPrice = array.sort((a, b) => a.price - b.price)
+  return orderedByPrice
+}
+
+
+
+
+
+
 module.exports = {
   maxNumber,
   sumaPares,
@@ -55,4 +66,5 @@ module.exports = {
   startsWithA,
   expensiveProduct,
   isNotDone,
+  orderedByPrice,
 };

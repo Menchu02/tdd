@@ -5,7 +5,7 @@ const {
   startsWithA,
   expensiveProduct,
   isNotDone,
-  productsPrice
+  orderedByPrice
 } = require('../src/retos01');
 
 test('debe devolver el número mayor de una array de números', () => {
